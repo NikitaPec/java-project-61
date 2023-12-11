@@ -1,10 +1,26 @@
 package hexlet.code;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import hexlet.code.cli.Cli;
+
+import static hexlet.code.game.parityCheck.ParityCheck.startGameParityCheck;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Welcome to the Brain Games!");
-        Cli.greetings();
+        int select = Cli.selector();
+        switch (select) {
+            case 0:
+                System.out.println("Exit");
+                break;
+            case 1:
+                System.out.println("Welcome to the Brain Games!");
+                Cli.greetings();
+                break;
+            case 2:
+                startGameParityCheck();
+                break;
+            default:
+                break;
+        }
+
     }
 }
