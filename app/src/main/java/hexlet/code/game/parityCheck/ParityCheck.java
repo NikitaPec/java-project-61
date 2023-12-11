@@ -17,9 +17,7 @@ public class ParityCheck {
             if (answer.equals("no") && (randomNumber % 2 != 0) || answer.equals("yes") && (randomNumber % 2 == 0)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                        + (answer.equals("no") ? "yes" : "no") + "'.\n"
-                        + "Let's try again, " + name + "!");
+                Cli.wrongAnswer((answer.equals("no") ? "yes" : "no"), answer, name);
                 break;
             }
         }

@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.cli.Cli;
 
+import static hexlet.code.game.calc.Calc.startGameCalculator;
 import static hexlet.code.game.parityCheck.ParityCheck.startGameParityCheck;
 
 public class App {
@@ -17,6 +18,9 @@ public class App {
                 break;
             case 2:
                 startGameParityCheck();
+                break;
+            case 3:
+                startGameCalculator();
                 break;
             default:
                 break;
