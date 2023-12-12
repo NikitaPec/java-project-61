@@ -30,9 +30,11 @@ public class IsPrime {
         System.out.println("Congratulations, " + name + "!");
     }
     public static String isPrime(Integer number) {
-        if(number < 2) return "no";
-        for(int i = 2; i < number / 2; i++) {
-            if(number % i == 0) {
+        if (number < 2) {
+            return "no";
+        }
+        for (int i = 2; i < number / 2; i++) {
+            if (number % i == 0) {
                 return "no";
             }
         }
