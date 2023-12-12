@@ -20,7 +20,7 @@ public class Calc {
             secondOperator = random.nextInt(20);
             numSign = random.nextInt(3);
             System.out.println("Question: " + firstOperator + myArray[numSign] + secondOperator);
-            String answer = Cli.answer();
+
             switch (numSign) {
                 case 0:
                     result = firstOperator - secondOperator;
@@ -34,11 +34,19 @@ public class Calc {
                 default:
                     break;
             }
-            if (result == Integer.parseInt(answer)) {
-                System.out.println("Correct!");
-            } else {
-                Cli.wrongAnswer(Integer.toString(result), answer, name);
-                break;
+
+            String answer = Cli.answer();
+
+            try {
+                if (result == Integer.parseInt(answer)) {
+                    System.out.println("Correct!");
+                } else {
+                    Cli.wrongAnswer(Integer.toString(result), answer, name);
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("It looks like you didn't understand the rules of the game, try again :-)");
+                return;
             }
         }
         System.out.println("Congratulations, " + name + "!");

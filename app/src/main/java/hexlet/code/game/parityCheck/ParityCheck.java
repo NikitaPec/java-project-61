@@ -18,7 +18,7 @@ public class ParityCheck {
                 System.out.println("Correct!");
             } else {
                 Cli.wrongAnswer((answer.equals("no") ? "yes" : "no"), answer, name);
-                break;
+                return;
             }
         }
         System.out.println("Congratulations, " + name + "!");

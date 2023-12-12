@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.cli.Cli;
 
 import static hexlet.code.game.calc.Calc.startGameCalculator;
+import static hexlet.code.game.greatestCommonDivisor.GreatestCommonDivisor.startGameGreatestCommonDivisor;
 import static hexlet.code.game.parityCheck.ParityCheck.startGameParityCheck;
 
 public class App {
@@ -21,6 +22,9 @@ public class App {
                 break;
             case 3:
                 startGameCalculator();
+                break;
+            case 4:
+                startGameGreatestCommonDivisor();
                 break;
             default:
                 break;
