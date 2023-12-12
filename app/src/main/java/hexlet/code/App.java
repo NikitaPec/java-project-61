@@ -4,7 +4,8 @@ import hexlet.code.cli.Cli;
 
 import static hexlet.code.game.calc.Calc.startGameCalculator;
 import static hexlet.code.game.greatestCommonDivisor.GreatestCommonDivisor.startGameGreatestCommonDivisor;
-import static hexlet.code.game.parityCheck.ParityCheck.startGameParityCheck;
+import static hexlet.code.game.isPrime.IsPrime.startGameIsPrime;
+import static hexlet.code.game.isEven.IsEven.startGameParityCheck;
 import static hexlet.code.game.progression.Progression.startGameProgression;
 
 public class App {
@@ -29,6 +30,9 @@ public class App {
                 break;
             case 5:
                 startGameProgression();
+                break;
+            case 6:
+                startGameIsPrime();
                 break;
             default:
                 break;

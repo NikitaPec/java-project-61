@@ -1,26 +1,39 @@
-package hexlet.code.game.parityCheck;
+package hexlet.code.game.isEven;
 
 import hexlet.code.cli.Cli;
 
 import java.util.Random;
 
-public class ParityCheck {
+public class IsEven {
     public static void startGameParityCheck() {
         Random random = new Random();
+
+        String result;
         int randomNumber;
+
         String name = Cli.greetings();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < 3; i++) {
             randomNumber = random.nextInt(100);
             System.out.println("Question: " + randomNumber);
+
             String answer = Cli.answer();
-            if (answer.equals("no") && (randomNumber % 2 != 0) || answer.equals("yes") && (randomNumber % 2 == 0)) {
+            result = isEven(randomNumber);
+
+            if (answer.equals(result)) {
                 System.out.println("Correct!");
             } else {
-                Cli.wrongAnswer((answer.equals("no") ? "yes" : "no"), answer, name);
+                Cli.wrongAnswer(result, answer, name);
                 return;
             }
         }
         System.out.println("Congratulations, " + name + "!");
+    }
+    public static String isEven(Integer number) {
+        if (number % 2 == 0) {
+            return "yes";
+        } else {
+            return "no";
+        }
     }
 }
