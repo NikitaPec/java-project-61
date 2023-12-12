@@ -12,7 +12,7 @@ public class GreatestCommonDivisor {
         int result;
         int numberOfQuestions = 3;
         int maxOperator = 100;
-        int minOperator = 100;
+        int minOperator = 1;
 
         Random random = new Random();
 
