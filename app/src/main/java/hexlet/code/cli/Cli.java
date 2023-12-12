@@ -1,5 +1,6 @@
 package hexlet.code.cli;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Cli {
@@ -13,6 +14,9 @@ public class Cli {
 
     }
     public static String selector() {
+
+        int selectUser;
+
         Scanner sc = new Scanner(System.in);
         System.out.print("""
                 Please enter the game number and press Enter.
@@ -24,19 +28,25 @@ public class Cli {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
-        if (sc.nextInt() == 0) {
+        try {
+            selectUser = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Unknown team.");
             return "Exit";
-        } else if (sc.nextInt() == 1) {
+        }
+        if (selectUser == 0) {
+            return "Exit";
+        } else if (selectUser == 1) {
             return "Greet";
-        } else if (sc.nextInt() == 2) {
+        } else if (selectUser == 2) {
             return "Even";
-        } else if (sc.nextInt() == 3) {
+        } else if (selectUser == 3) {
             return "Calc";
-        } else if (sc.nextInt() == 4) {
+        } else if (selectUser == 4) {
             return "GCD";
-        } else if (sc.nextInt() == 5) {
+        } else if (selectUser == 5) {
             return "Progression";
-        } else if (sc.nextInt() == 6) {
+        } else if (selectUser == 6) {
             return "Prime";
         } else {
             System.out.println("Unknown team.");
