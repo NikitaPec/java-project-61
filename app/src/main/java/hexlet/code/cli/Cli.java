@@ -12,7 +12,7 @@ public class Cli {
         return name;
 
     }
-    public static int selector() {
+    public static String selector() {
         Scanner sc = new Scanner(System.in);
         System.out.print("""
                 Please enter the game number and press Enter.
@@ -24,7 +24,24 @@ public class Cli {
                 6 - Prime
                 0 - Exit
                 Your choice:\s""");
-        return sc.nextInt();
+        if (sc.nextInt() == 0) {
+            return "Exit";
+        } else if (sc.nextInt() == 1) {
+            return "Greet";
+        } else if (sc.nextInt() == 2) {
+            return "Even";
+        } else if (sc.nextInt() == 3) {
+            return "Calc";
+        } else if (sc.nextInt() == 4) {
+            return "GCD";
+        } else if (sc.nextInt() == 5) {
+            return "Progression";
+        } else if (sc.nextInt() == 6) {
+            return "Prime";
+        } else {
+            System.out.println("Unknown team.");
+            return "Exit";
+        }
     }
     public static String answer() {
         Scanner sc = new Scanner(System.in);

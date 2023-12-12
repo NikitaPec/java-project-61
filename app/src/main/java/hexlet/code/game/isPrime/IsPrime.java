@@ -9,12 +9,15 @@ public class IsPrime {
         Random random = new Random();
 
         String result;
+
         int randomNumber;
+        int maxRandomNumber = 100;
+        int numberOfQuestions = 3;
 
         String name = Cli.greetings();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (int i = 0; i < 3; i++) {
-            randomNumber = random.nextInt(100);
+        for (int i = 0; i < numberOfQuestions; i++) {
+            randomNumber = random.nextInt(maxRandomNumber);
             System.out.println("Question: " + randomNumber);
 
             String answer = Cli.answer();

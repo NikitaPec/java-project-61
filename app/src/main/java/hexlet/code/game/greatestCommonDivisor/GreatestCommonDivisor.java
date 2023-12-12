@@ -10,15 +10,18 @@ public class GreatestCommonDivisor {
         int firstOperator;
         int secondOperator;
         int result;
+        int numberOfQuestions = 3;
+        int maxOperator = 100;
+        int minOperator = 100;
 
         Random random = new Random();
 
         String name = Cli.greetings();
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        for (int i = 0; i < 3; i++) {
-            firstOperator = random.nextInt(1, 100);
-            secondOperator = random.nextInt(1, 100);
+        for (int i = 0; i < numberOfQuestions; i++) {
+            firstOperator = random.nextInt(minOperator, maxOperator);
+            secondOperator = random.nextInt(minOperator, maxOperator);
             System.out.println("Question: " + firstOperator + " " + secondOperator);
             result = Math.min(firstOperator, secondOperator);
 

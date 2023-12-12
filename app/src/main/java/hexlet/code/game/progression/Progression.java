@@ -11,25 +11,33 @@ public class Progression {
 
         int quantity;
         int step;
-        int missingElement;
-        int startElement;
+        int positionOfUnknownElement;
+        int startingNumber;
         int result = 0;
+        int minQuantity = 5;
+        int maxQuantity = 10;
+        int minStep = 2;
+        int maxStep = 10;
+        int minPositionOfUnknownElement = 2;
+        int minStartingNumber = 1;
+        int maxStartingNumber = 30;
+        int numberOfQuestions = 3;
 
         String name = Cli.greetings();
         System.out.println("What number is missing in the progression?");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < numberOfQuestions; i++) {
             var question = new StringBuilder();
-            quantity = random.nextInt(5, 10);
-            step = random.nextInt(2, 10);
-            startElement = random.nextInt(2, 30);
-            missingElement = random.nextInt(1, quantity);
+            quantity = random.nextInt(minQuantity, maxQuantity);
+            step = random.nextInt(minStep, maxStep);
+            startingNumber = random.nextInt(minStartingNumber, maxStartingNumber);
+            positionOfUnknownElement = random.nextInt(minPositionOfUnknownElement, quantity);
             for (int j = 0; j < quantity; j++) {
-                startElement = startElement + step;
-                if (j + 1 == missingElement) {
+                startingNumber = startingNumber + step;
+                if (j + 1 == positionOfUnknownElement) {
                     question.append(".. ");
-                    result = startElement;
+                    result = startingNumber;
                 } else {
-                    question.append(startElement).append(" ");
+                    question.append(startingNumber).append(" ");
                 }
             }
             System.out.println("Question: " + question);

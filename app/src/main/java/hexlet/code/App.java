@@ -10,28 +10,28 @@ import static hexlet.code.game.progression.Progression.startGameProgression;
 
 public class App {
     public static void main(String[] args) {
-        int select = Cli.selector();
+        String select = Cli.selector();
         switch (select) {
-            case 0:
+            case "Exit":
                 System.out.println("Exit");
                 break;
-            case 1:
+            case "Greet":
                 System.out.println("Welcome to the Brain Games!");
                 Cli.greetings();
                 break;
-            case 2:
+            case "Even":
                 startGameParityCheck();
                 break;
-            case 3:
+            case "Calc":
                 startGameCalculator();
                 break;
-            case 4:
+            case "GCD":
                 startGameGreatestCommonDivisor();
                 break;
-            case 5:
+            case "Progression":
                 startGameProgression();
                 break;
-            case 6:
+            case "Prime":
                 startGameIsPrime();
                 break;
             default:
