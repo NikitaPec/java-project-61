@@ -5,6 +5,7 @@ import hexlet.code.cli.Cli;
 import static hexlet.code.game.calc.Calc.startGameCalculator;
 import static hexlet.code.game.greatestCommonDivisor.GreatestCommonDivisor.startGameGreatestCommonDivisor;
 import static hexlet.code.game.parityCheck.ParityCheck.startGameParityCheck;
+import static hexlet.code.game.progression.Progression.startGameProgression;
 
 public class App {
     public static void main(String[] args) {
@@ -25,6 +26,9 @@ public class App {
                 break;
             case 4:
                 startGameGreatestCommonDivisor();
+                break;
+            case 5:
+                startGameProgression();
                 break;
             default:
                 break;
