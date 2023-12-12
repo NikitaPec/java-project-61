@@ -17,8 +17,8 @@ public class GreatestCommonDivisor {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < 3; i++) {
-            firstOperator = random.nextInt(100);
-            secondOperator = random.nextInt(100);
+            firstOperator = random.nextInt(1,100);
+            secondOperator = random.nextInt(1,100);
             System.out.println("Question: " + firstOperator + " " + secondOperator);
             result = Math.min(firstOperator, secondOperator);
 
